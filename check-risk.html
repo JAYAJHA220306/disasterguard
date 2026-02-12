@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Dashboard | DisasterGuard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"><i class="fas fa-shield-halved"></i> DisasterGuard</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="check-risk.html" class="active">Check Risk</a></li>
+            <li><a href="guidebook.html">Guidebook</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="search-card">
+            <h2>Local Risk Assessment</h2>
+            <p style="color: var(--muted); margin-bottom: 10px;">Enter your Village, Town, or City name</p>
+            
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Search Location (e.g. Nagpur)...">
+                
+                <button type="button" onclick="getLocation()" id="gpsBtn" title="Use Current Location" style="background: rgba(255,255,255,0.1); border: 1px solid var(--border); margin-top: 0; width: 60px;">
+                    <i class="fas fa-location-arrow" style="color: var(--accent);"></i>
+                </button>
+                
+                <button onclick="getWeatherData()" style="margin-top: 0;">
+                    <i class="fas fa-satellite-dish"></i> Scan Area
+                </button>
+            </div>
+            
+            <p style="margin-top: 15px; font-size: 0.85rem; color: var(--muted);">
+                <i class="fas fa-circle-info"></i> Tip: If village isn't found, try the nearest Taluka or District name.
+            </p>
+        </div>
+
+        <div id="dashboard" class="hidden" style="transition: opacity 0.5s ease; opacity: 0;">
+            
+            <div id="riskLevel" class="risk-card">
+                <h1 id="riskStatusText">Risk: --</h1>
+                <p id="riskAdvice">Data analysis in progress...</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="glass-card">
+                    <i class="fas fa-thermometer-half" style="color: var(--danger); font-size: 1.5rem;"></i>
+                    <h3 style="margin-top: 10px;">Local Temp</h3>
+                    <p id="tempText" class="big-text">--°C</p>
+                </div>
+                <div class="glass-card">
+                    <i class="fas fa-cloud-sun-rain" style="color: var(--accent2); font-size: 1.5rem;"></i>
+                    <h3 style="margin-top: 10px;">Atmosphere</h3>
+                    <p id="weatherDesc" class="big-text" style="font-size: 1.8rem;">--</p>
+                </div>
+            </div>
+
+            <div class="glass-card" style="margin-top: 25px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3 style="margin: 0;"><i class="fas fa-chart-line"></i> Vulnerability Trends</h3>
+                    <small style="color: var(--muted);">Real-time Satellite Data</small>
+                </div>
+                <div style="position: relative; height: 300px;">
+                    <canvas id="tempChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/charts.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survival Guidebook | DisasterGuard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"><i class="fas fa-shield-halved"></i> DisasterGuard</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="check-risk.html">Check Risk</a></li>
+            <li><a href="guidebook.html" class="active">Guidebook</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 40px; margin-top: 50px;">
+            <h1 class="big-text" style="font-size: 2.8rem;">Emergency Guidebook</h1>
+            <p style="color: var(--text-muted); margin-bottom: 25px;">Search for life-saving instructions during disasters or pandemics.</p>
+            
+            <div class="search-box" style="max-width: 600px; margin: 0 auto;">
+                <input type="text" id="guideSearch" placeholder="Type to filter (e.g. Flood, Heat, Pandemic)...">
+            </div>
+        </header>
+
+        <div class="stats-grid" id="guideContainer">
+            
+            <div class="glass-card guidebook-card">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <i class="fas fa-sun" style="font-size: 2rem; color: var(--warning);"></i>
+                    <h3 style="margin: 0;">Heatwave</h3>
+                </div>
+                <ul>
+                    <li>Drink ORS or salted lemon water every hour.</li>
+                    <li>Move livestock to shaded, ventilated sheds immediately.</li>
+                    <li>Keep windows covered with damp curtains to cool rooms.</li>
+                    <li>Avoid high-protein food and alcohol during peak heat.</li>
+                </ul>
+            </div>
+
+            <div class="glass-card guidebook-card">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <i class="fas fa-house-flood-water" style="font-size: 2rem; color: var(--accent);"></i>
+                    <h3 style="margin: 0;">Floods</h3>
+                </div>
+                <ul>
+                    <li>Store dry food, grains, and seeds on elevated platforms.</li>
+                    <li>Turn off the main electrical switch to avoid short circuits.</li>
+                    <li>Do not walk through moving water (even 6 inches can knock you over).</li>
+                    <li>Keep a 'Go-Bag' ready with ID cards and emergency medicine.</li>
+                </ul>
+            </div>
+
+            <div class="glass-card guidebook-card">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <i class="fas fa-mask-face" style="font-size: 2rem; color: var(--danger);"></i>
+                    <h3 style="margin: 0;">Pandemics</h3>
+                </div>
+                <ul>
+                    <li>Wash hands with soap for at least 20 seconds frequently.</li>
+                    <li>Isolate symptomatic family members in a ventilated room.</li>
+                    <li>Avoid sharing utensils or towels with someone who is ill.</li>
+                    <li>Stay updated via official government radio or SMS alerts.</li>
+                </ul>
+            </div>
+
+            <div class="glass-card guidebook-card" style="border-top-color: var(--success);">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <i class="fas fa-phone-flip" style="font-size: 2rem; color: var(--success);"></i>
+                    <h3 style="margin: 0;">Village Helplines</h3>
+                </div>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>108</strong> - Ambulance Service</li>
+                    <li><strong>100</strong> - Police Emergency</li>
+                    <li><strong>1070</strong> - State Disaster Relief</li>
+                    <li><strong>1551</strong> - Farmer's Helpline (Kisan Call Center)</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/guidebook.js"></script>
+</body>
+</html>
